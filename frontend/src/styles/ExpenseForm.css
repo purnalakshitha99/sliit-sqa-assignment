@@ -1,0 +1,240 @@
+/* Add this to your existing ExpenseForm.css file if it doesn't already exist */
+
+.existing-receipt-note {
+  font-size: 0.75rem;
+  color: #475569;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.file-name {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.file-input-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3rem;
+  background-color: var(--input-background);
+  border: 1px dashed var(--input-border);
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  color: #64748b;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.file-input-button:hover {
+  background-color: #f1f5f9;
+  border-color: var(--primary-color);
+}
+
+.file-input-button svg {
+  color: var(--primary-color);
+}
+
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.expense-form-container {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.expense-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem;
+  border-bottom: 1px solid var(--input-border);
+  flex-wrap: wrap;
+}
+
+.expense-form-header h3 {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--text-color);
+}
+
+.expense-form {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.input-group,
+.file-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--input-background);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+textarea {
+  height: auto;
+  padding: 1rem;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  background-color: white;
+}
+
+input.error,
+select.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 0rem;
+}
+
+.btn {
+  padding: 0 1.5rem;
+  height: 3rem; /* Ensures both buttons are the same height */
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px; /* Ensures minimum width for both buttons */
+  flex: 1; /* Makes both buttons take equal space */
+  max-width: 200px; /* Prevents buttons from getting too wide */
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  
+  /* Removed margin-top that was causing misalignment */
+}
+
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+}
+
+/* Add CSS variables for consistent theming */
+:root {
+  --primary-color: #0ea5e9;
+  --primary-hover: #0284c7;
+  --text-color: #1e293b;
+  --input-border: #e2e8f0;
+  --input-focus: #0ea5e9;
+  --input-background: #f8fafc;
+}
