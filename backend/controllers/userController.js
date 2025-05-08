@@ -1,7 +1,7 @@
 // backend/controllers/userController.js
 const User = require("../models/User")
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcryptjs")
+// const bcrypt = require("bcryptjs")
 
 // Generate a JWT token
 const generateToken = (id) => {
@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10)
+    // const hashedPassword = await bcrypt.hash(password, 10)
 
     // Handle profile picture if uploaded
     let profilePic = null
@@ -43,7 +43,7 @@ const registerUser = async (req, res) => {
     const user = await User.create({
       name,
       email,
-      password: hashedPassword,
+      password,
       nic,
       age,
       gender,
